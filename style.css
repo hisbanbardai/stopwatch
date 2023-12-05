@@ -1,4 +1,17 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#timer {
+  font-size: 8rem;
+  font-weight: bold;
+  color: purple;
+  text-shadow: 2px 2px 2px rgba(128, 0, 128, 0.432);
 }

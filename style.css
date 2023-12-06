@@ -33,4 +33,15 @@ button {
   background-color: purple;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgb(187, 108, 187);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+button:hover {
+  background-color: rgba(158, 1, 158, 0.466);
+}
+
+button[disabled] {
+  cursor: default;
+  opacity: 0.4;
 }

@@ -29,7 +29,11 @@ function startTimer() {
   }, 10)
  }
 
-function stopTimer() { }
+function stopTimer() {
+  clearInterval(timerInterval);
+  startButtonEl.disabled = false;
+  stopButtonEl.disabled = true;
+}
 
 function resetTimer() {}
 

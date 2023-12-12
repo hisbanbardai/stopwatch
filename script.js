@@ -5,14 +5,20 @@ const resetEle = document.getElementById("reset");
 let startTime = 0;
 let elapsedTime = 0;
 
-function startTimer() { }
+function startTimer() {
+  startTime = Date.now() - elapsedTime;
+  setInterval(() => {
+    elapsedTime = Date.now() - startTime;
+    timerEle.textContent = elapsedTime;
+  }, 10)
+ }
 
 function stopTimer() { }
 
 function resetTimer() {}
 
-startEle.addEventListener("click", function() {});
+startEle.addEventListener("click", startTimer);
 
-stopEle.addEventListener("click", function () {});
+stopEle.addEventListener("click", stopTimer);
 
-resetEle.addEventListener("click", function () {});
+resetEle.addEventListener("click", resetTimer);

@@ -4,6 +4,7 @@ const stopEle = document.getElementById("stop");
 const resetEle = document.getElementById("reset");
 let startTime = 0;
 let elapsedTime = 0;
+let timerInterval;
 
 function formatTime(elapsedTime) {
   const milliseconds = Math.floor((elapsedTime % 1000) / 10);
@@ -23,10 +24,12 @@ function formatTime(elapsedTime) {
 
 function startTimer() {
   startTime = Date.now() - elapsedTime;
-  setInterval(() => {
+  timerInterval = setInterval(() => {
     elapsedTime = Date.now() - startTime;
     timerEle.textContent = elapsedTime;
-  }, 10)
+  }, 10);
+  startButtonEl.disabled = true;
+  stopButtonEl.disabled = false;
  }
 
 function stopTimer() {
@@ -35,7 +38,15 @@ function stopTimer() {
   stopButtonEl.disabled = true;
 }
 
-function resetTimer() {}
+function resetTimer() {
+  clearInterval(timerInterval);
+
+  elapsedTime = 0;
+  timerEl.textContent = "00:00:00";
+
+  startButtonEl.disabled = false;
+  stopButtonEl.disabled = true;
+}
 
 startEle.addEventListener("click", startTimer);
 

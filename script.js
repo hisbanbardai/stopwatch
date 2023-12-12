@@ -26,7 +26,7 @@ function startTimer() {
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(() => {
     elapsedTime = Date.now() - startTime;
-    timerEle.textContent = elapsedTime;
+    timerEle.textContent = formatTime(elapsedTime);
   }, 10);
   startButtonEl.disabled = true;
   stopButtonEl.disabled = false;
